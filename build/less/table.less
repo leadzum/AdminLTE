@@ -23,6 +23,50 @@
   tr td .progress {
     margin-top: 5px;
   }
+  &.table-striped> tbody> tr:hover {
+    background-color: #cccccc;
+  }
+  &.table-center {
+    > thead,
+    > tfoot {
+      > tr> th {
+        text-align: center;
+        vertical-align: middle;
+      }
+    }
+  }
+  &.table-leadzum-green {
+    > thead,
+    > tfoot {
+      > tr> th {
+        background: @leadzum-green;
+      }
+    }
+  }
+  &.table-leadzum-blue {
+    > thead,
+    > tfoot {
+      > tr> th {
+        background: @leadzum-blue;
+      }
+    }
+  }
+  &.table-leadzum-orange {
+    > thead,
+    > tfoot {
+      > tr> th {
+        background: @leadzum-orange;
+      }
+    }
+  }
+  &.table-leadzum-gray {
+    > thead,
+    > tfoot {
+      > tr> th {
+        background: @leadzum-gray;
+      }
+    }
+  } 
 }
 
 //Bordered Table

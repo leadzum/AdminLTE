@@ -25,6 +25,17 @@
 @black: #111;
 @gray-lte: #d2d6de;
 
+// Leadzum Colors
+@leadzum-primary:#50e600;
+@leadzum-secondary:#3EC1D5;
+@leadzum-green:#50e600;
+@leadzum-blue:#3EC1D5;
+@leadzum-orange:#eb4011;
+@leadzum-gray:#022B39;
+@leadzum-gray-75:lighten(@leadzum-gray, 15%);
+@leadzum-gray-10:lighten(@leadzum-gray, 90%);
+@leadzum-white:#ffffff;
+
 // LAYOUT
 // --------------------------------------------------------
 
@@ -64,12 +75,23 @@
 @sidebar-light-submenu-color: #777;
 @sidebar-light-submenu-hover-color: #000;
 
+// Leadzum sidebar
+@sidebar-leadzum-bg: #f9fafc;
+@sidebar-leadzum-hover-bg: lighten(#f0f0f1, 1.5%);
+@sidebar-leadzum-color: @black;
+@sidebar-leadzum-hover-color: @leadzum-primary;
+@sidebar-leadzum-submenu-bg: darken(@sidebar-leadzum-hover-bg, 5%); 
+@sidebar-leadzum-submenu-color: @sidebar-leadzum-color;
+@sidebar-leadzum-submenu-hover-color: @sidebar-leadzum-hover-color;
+@icon-active-color: @leadzum-primary;
+
 // sidebar-expanded-on-hover
 @sidebar-expanded-shadow: 3px 0 8px rgba(0,0,0,.125);
 
 // CONTROL SIDEBAR
 // --------------------------------------------------------
-@control-sidebar-width: @sidebar-width;
+// @control-sidebar-width: @sidebar-width;
+@control-sidebar-width: 400px;
 
 // BOXES
 // --------------------------------------------------------
@@ -94,7 +116,8 @@
 
 // FORMS
 // --------------------------------------------------------
-@input-radius: 0;
+// @input-radius: 0;
+@input-radius: 4px;
 
 // BUTTONS
 // --------------------------------------------------------
@@ -124,3 +147,23 @@
 // Transition global options
 @transition-speed: .3s;
 @transition-fn: ease-in-out;
+
+//Leadzum Layout Settings
+//--------------------------------------------------------
+@brand-bar-padding-top-bottom: 10px; //padding top and bottom
+@brand-bar-padding-left-right: 60px;
+@brand-bar-height: 75px;
+@brand-bar-md-height: 60px;
+@brand-bar-sm-height: 45px;
+@brand-bar-sm-padding-left-right: 30px;
+
+@header-height: @brand-bar-height + @brand-bar-padding-top-bottom * 2 + 50px;
+@header-md-height: @brand-bar-md-height + @brand-bar-padding-top-bottom * 2 + 50px;
+@header-sm-height: @brand-bar-sm-height + @brand-bar-padding-top-bottom * 2 + 50px;
+@collapse-header-height: @header-sm-height + 50px;
+
+@leadzum-font-path: "../fonts/";
+//** File name for all font files.
+@leadzum-regular-font-name: "NewJune-Book";
+@leadzum-medium-font-name: "NewJune-Medium";
+@leadzum-semibold-font-name: "NewJune-Semibold";

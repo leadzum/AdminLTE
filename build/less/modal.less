@@ -7,7 +7,7 @@
 }
 
 .modal-content {
-  .border-radius(0);
+  .border-radius(@input-radius);
   .box-shadow(0 2px 3px rgba(0, 0, 0, .125));
   border: 0;
   @media (min-width: @screen-sm-min) {
@@ -76,5 +76,49 @@
   .modal-footer {
     &:extend(.bg-red-active);
     border-color: darken(@red, 10%);
+  }
+}
+
+.modal-leadzum-green {
+  .modal-body {
+    &:extend(.bg-leadzum-green);
+  }
+  .modal-header,
+  .modal-footer {
+    &:extend(.bg-leadzum-green-active);
+    border-color: darken(@leadzum-green, 10%);
+  }
+}
+
+.modal-leadzum-blue {
+  .modal-body {
+    &:extend(.bg-leadzum-blue);
+  }
+  .modal-header,
+  .modal-footer {
+    &:extend(.bg-leadzum-blue-active);
+    border-color: darken(@leadzum-blue, 10%);
+  }
+}
+
+.modal-leadzum-orange {
+  .modal-body {
+    &:extend(.bg-leadzum-orange);
+  }
+  .modal-header,
+  .modal-footer {
+    &:extend(.bg-leadzum-orange-active);
+    border-color: darken(@leadzum-orange, 10%);
+  }
+}
+
+.modal-leadzum-gray {
+  .modal-body {
+    &:extend(.bg-leadzum-gray);
+  }
+  .modal-header,
+  .modal-footer {
+    &:extend(.bg-leadzum-gray-active);
+    border-color: darken(@leadzum-gray, 10%);
   }
 }

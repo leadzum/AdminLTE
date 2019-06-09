@@ -2,6 +2,22 @@
  * Core: General Layout Style
  * -------------------------
  */
+ @font-face {
+  font-family: 'NewJune-Book';
+  src: url('@{leadzum-font-path}@{leadzum-regular-font-name}.otf');
+}
+
+@font-face {
+  font-family: 'NewJune-Medium';
+  src: url('@{leadzum-font-path}@{leadzum-medium-font-name}.otf');
+}
+
+@font-face {
+  font-family: 'NewJune-Semibold';
+  src: url('@{leadzum-font-path}@{leadzum-semibold-font-name}.otf');
+}
+
+
 html,
 body {
   height: 100%;
@@ -11,7 +27,7 @@ body {
 }
 
 body {
-  font-family: 'Source Sans Pro', 'Helvetica Neue', Helvetica, Arial, sans-serif;
+  font-family: '@{leadzum-regular-font-name}', 'Source Sans Pro', 'Helvetica Neue', Helvetica, Arial, sans-serif;
   font-weight: 400;
   overflow-x: hidden;
   overflow-y: auto;
@@ -96,9 +112,15 @@ body {
   }
   .content-wrapper,
   .right-side {
-    padding-top: 50px;
+    padding-top: @header-height;
     @media (max-width: @screen-header-collapse) {
-      padding-top: 100px;
+      padding-top: @collapse-header-height;
+    }
+    @media(min-width: @screen-sm-min) and (max-width: @screen-sm-max) {
+      padding-top: @header-sm-height;
+    }
+    @media(min-width: @screen-md-min) and (max-width: @screen-md-max) {
+      padding-top: @header-md-height;
     }
   }
   &.layout-boxed {
@@ -145,7 +167,7 @@ h6,
 .h4,
 .h5,
 .h6 {
-  font-family: 'Source Sans Pro', sans-serif;
+  font-family: '@{leadzum-regular-font-name}', 'Source Sans Pro', sans-serif;
 }
 
 /* General Links */
