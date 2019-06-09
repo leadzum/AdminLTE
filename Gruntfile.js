@@ -1,7 +1,7 @@
 // AdminLTE Gruntfile
 module.exports = function (grunt) { // jshint ignore:line
   'use strict';
-
+  var output = '../LeadzumFramework/Leadzum.Framework.Mvc/wwwroot/'; //change the path to your web project folder
   grunt.initConfig({
     pkg   : grunt.file.readJSON('package.json'),
     watch : {
@@ -83,6 +83,7 @@ module.exports = function (grunt) { // jshint ignore:line
           'dist/css/skins/skin-green-light.css' : 'build/less/skins/skin-green-light.less',
           'dist/css/skins/skin-red-light.css'   : 'build/less/skins/skin-red-light.less',
           'dist/css/skins/skin-purple-light.css': 'build/less/skins/skin-purple-light.less',
+          "dist/css/skins/skin-leadzum.css"     : "build/less/skins/skin-leadzum.less",
           'dist/css/skins/_all-skins.css'       : 'build/less/skins/_all-skins.less'
         }
       },
@@ -104,6 +105,7 @@ module.exports = function (grunt) { // jshint ignore:line
           'dist/css/skins/skin-green-light.min.css' : 'build/less/skins/skin-green-light.less',
           'dist/css/skins/skin-red-light.min.css'   : 'build/less/skins/skin-red-light.less',
           'dist/css/skins/skin-purple-light.min.css': 'build/less/skins/skin-purple-light.less',
+          "dist/css/skins/skin-leadzum.min.css"     : "build/less/skins/skin-leadzum.less",
           'dist/css/skins/_all-skins.min.css'       : 'build/less/skins/_all-skins.less'
         }
       }
@@ -267,6 +269,24 @@ module.exports = function (grunt) { // jshint ignore:line
     // for them
     clean: {
       build: ['build/img/*']
+    },
+
+    copy: {
+      main: {
+        files: [
+          { expand: true, cwd: 'dist/css/', src: '**', dest: output + 'css/theme/' },
+          {
+            expand: true,
+            cwd: 'dist/js/',
+            src: 'adminlte*.js',
+            dest: output + 'js/',
+            rename: function (dest, src) {
+              return dest + src.replace('adminlte', 'app');
+            }
+          },
+          { expand: true, cwd: 'dist/fonts/', src: '**', dest: output + 'fonts' }
+        ]
+      }
     }
   });
 
@@ -307,4 +327,8 @@ module.exports = function (grunt) { // jshint ignore:line
 
   // The default task (running 'grunt' in console) is 'watch'
   grunt.registerTask('default', ['watch']);
+
+  grunt.loadNpmTasks('grunt-contrib-copy');
+
+  grunt.registerTask('release', ['less', 'copy']);
 };
